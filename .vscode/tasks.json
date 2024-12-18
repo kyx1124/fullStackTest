@@ -1,0 +1,90 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PreLaunchTask for Run incident_management004",
+      "type": "process",
+      "command": "npx",
+      "args": [
+        "dev-cap-tools",
+        "gen-entrypoint"
+      ],
+      "dependsOn": [
+        "BuildMDK"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "dpt.ptdeploy",
+      "label": "Deploy incident_management004",
+      "taskType": "Deploy"
+    },
+    {
+      "type": "dpt.ptdeploy",
+      "label": "Enable Discovery and Deploy incident_management004",
+      "taskType": "Deploy",
+      "enableDiscovery": "true"
+    },
+    {
+      "label": "checkPort4004",
+      "type": "shell",
+      "command": "if lsof -i :4004 >/dev/null 2>&1; then echo ' A debugger has been started!';exit 1; else exit 0; fi",
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "npm-install",
+      "type": "process",
+      "command": "npm",
+      "args": [
+        "install"
+      ],
+      "dependsOn": [
+        "checkPort4004"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/"
+      }
+    },
+    {
+      "label": "BuildMDK",
+      "type": "process",
+      "command": "npx",
+      "args": [
+        "mdk",
+        "build",
+        "--target",
+        "module",
+        "--ui5",
+        "--recursive"
+      ],
+      "dependsOn": [
+        "npm-install"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/"
+      }
+    },
+    {
+      "label": "dev-project",
+      "type": "process",
+      "command": "npx",
+      "args": [
+        "dev-cap-tools",
+        "gen-entrypoint"
+      ],
+      "dependsOn": [
+        "BuildMDK"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/"
+      }
+    }
+  ]
+}

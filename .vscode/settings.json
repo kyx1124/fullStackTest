@@ -1,0 +1,18 @@
+{
+    "mdk.platform": "iOS & Android & Web",
+    "wattFeature.hanaTools.useLocalConnection": true,
+    "mdk.defaultEditor": "Text Editor",
+    "workbench.editorAssociations": {
+        "*.app": "default",
+        "*.global": "default",
+        "*.action": "default",
+        "*.extension": "default",
+        "*.page": "default",
+        "*.service": "default",
+        "*.cim": "default",
+        "*.rule": "default",
+        "*.properties": "default",
+        "*.fragment": "default"
+    },
+    "breadcrumbs.enabled": false
+}

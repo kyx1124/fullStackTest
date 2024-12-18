@@ -1,0 +1,2 @@
+sap.ui.require(["sap/fe/test/JourneyRunner","incidentmanagement004/incidents/test/integration/FirstJourney","incidentmanagement004/incidents/test/integration/pages/IncidentsList","incidentmanagement004/incidents/test/integration/pages/IncidentsObjectPage"],function(n,e,t,i){"use strict";var n=new n({launchUrl:sap.ui.require.toUrl("incidentmanagement004/incidents")+"/index.html"});n.run({pages:{onTheIncidentsList:t,onTheIncidentsObjectPage:i}},e.run)});
+//# sourceMappingURL=opaTests.qunit.js.map

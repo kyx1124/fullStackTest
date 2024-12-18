@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run incident_management004",
+      "runtimeExecutable": "cds",
+      "killBehavior": "polite",
+      "request": "launch",
+      "args": [
+        "watch",
+        "--open"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "type": "pwa-node",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "PreLaunchTask for Run incident_management004",
+      "envFile": "${workspaceFolder}/env/.env1",
+      "env": {
+        "run.config": "{\"handlerId\":\"lcap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/incident_management004\\\",\\\"profileName\\\":\\\"\\\"}\"}"
+      }
+    },
+    {
+      "name": "ADOPTION_LAB_API_BUSINESS_PARTNER",
+      "runtimeExecutable": "cds",
+      "request": "launch",
+      "killBehavior": "polite",
+      "args": [
+        "watch",
+        "--open"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "type": "pwa-node",
+      "cwd": "${workspaceFolder}/",
+      "preLaunchTask": "dev-project",
+      "envFile": "${workspaceFolder}/env/.env2",
+      "env": {
+        "run.config": "{\"handlerId\":\"lcap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/incident_management004/\\\",\\\"profileName\\\":\\\"\\\"}\"}"
+      }
+    }
+  ]
+}
